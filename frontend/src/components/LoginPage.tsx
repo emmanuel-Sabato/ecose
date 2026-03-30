@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, UserCircle, Loader2, AlertCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import logo from '../assets/ecose-logo.png';
 
 // Configure axios for session-based auth
 axios.defaults.withCredentials = true;
@@ -56,7 +55,7 @@ const LoginPage: React.FC = () => {
           <Link to="/" className="inline-block mb-6 group">
             <motion.img 
               whileHover={{ scale: 1.05 }}
-              src={logo} 
+              src="/assets/ecose-logo.png" 
               alt="Ecose Logo" 
               className="h-20 w-auto drop-shadow-2xl" 
             />

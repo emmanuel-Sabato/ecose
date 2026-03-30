@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   UserPlus
 } from 'lucide-react';
-import logo from '../assets/ecose-logo.png';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -72,7 +71,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
       {/* Brand Section */}
       <div className={`px-6 mb-12 flex items-center gap-4 h-12 overflow-hidden`}>
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="w-10 h-10 object-contain drop-shadow-[0_0_15px_rgba(49,138,43,0.3)]" />
+          <img src="/assets/ecose-logo.png" alt="Logo" className="w-10 h-10 object-contain drop-shadow-[0_0_15px_rgba(49,138,43,0.3)]" />
         </div>
         {isOpen && (
           <motion.div 
