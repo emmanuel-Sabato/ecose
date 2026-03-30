@@ -12,6 +12,20 @@ import { Bell, Search, User, Menu, X } from 'lucide-react';
 
 const AdminLayout: React.FC = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [settings, setSettings] = useState<any>(null);
+
+  React.useEffect(() => {
+    fetchSettings();
+  }, []);
+
+  const fetchSettings = async () => {
+    try {
+      const res = await (await import('axios')).default.get('https://ecose-backend.vercel.app/api/settings');
+      setSettings(res.data.data.settings);
+    } catch (err) {
+      console.error('Error fetching settings:', err);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-obsidian-900 text-white font-sans overflow-hidden flex">
@@ -53,7 +67,7 @@ const AdminLayout: React.FC = () => {
             <div className="flex items-center gap-3 pl-2">
               <div className="text-right hidden sm:block">
                 <p className="text-xs font-bold text-white tracking-wide">Administrator</p>
-                <p className="text-[10px] text-gray-500 font-medium">ecose.admin@campus.rw</p>
+                <p className="text-[10px] text-gray-500 font-medium">{settings?.contactEmail || 'ecose.admin@campus.rw'}</p>
               </div>
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-school-green to-school-gold p-[1px]">
                  <div className="w-full h-full rounded-[11px] bg-obsidian-800 flex items-center justify-center">

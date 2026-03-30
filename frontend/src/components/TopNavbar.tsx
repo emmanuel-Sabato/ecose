@@ -5,14 +5,25 @@ import { Link } from 'react-router-dom';
 
 const TopNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [settings, setSettings] = React.useState<any>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
+    fetchSettings();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const fetchSettings = async () => {
+    try {
+      const res = await (await import('axios')).default.get('https://ecose-backend.vercel.app/api/settings');
+      setSettings(res.data.data.settings);
+    } catch (err) {
+      console.error('Error fetching settings:', err);
+    }
+  };
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-[60] h-10 bg-black/90 backdrop-blur-md border-b border-white/5 transition-transform duration-500 ${isScrolled ? '-translate-y-full' : 'translate-y-0'} hidden lg:block`}>
@@ -21,11 +32,11 @@ const TopNavbar: React.FC = () => {
         <div className="flex items-center gap-6 text-[10px] tracking-[0.2em] font-bold uppercase text-white/40">
           <div className="flex items-center gap-2 group cursor-pointer hover:text-school-gold transition-colors duration-300">
             <Phone size={12} className="text-school-gold/50 group-hover:text-school-gold transition-colors" />
-            <span>+250 XXX XXX XXX</span>
+            <span>{settings?.contactPhone || '+250 XXX XXX XXX'}</span>
           </div>
           <div className="flex items-center gap-2 group cursor-pointer hover:text-school-gold transition-colors duration-300">
             <Mail size={12} className="text-school-gold/50 group-hover:text-school-gold transition-colors" />
-            <span>info@ecosemusambira.rw</span>
+            <span>{settings?.contactEmail || 'info@ecosemusambira.rw'}</span>
           </div>
         </div>
 
