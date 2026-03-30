@@ -16,14 +16,19 @@ const applicationRoutes = require('./routes/applicationRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
+app.set('trust proxy', 1); // Allow Vercel's proxy to handle secure cookies
 
 // 1. SECURITY MIDDLEWARE
 app.use(helmet()); // Set security HTTP headers
 
 // CORS configuration - Allow frontend to access backend
 app.use(cors({
-  origin: 'http://localhost:5173', // Your Vite development port
-  credentials: true, // Allow senting sessions/cookies
+  origin: [
+    'http://localhost:5173', 
+    'https://ecosemusambira.vercel.app',
+    'https://ecose-sem-st-kizito-musambira.vercel.app' // Adding alternative Vercel URL
+  ], 
+  credentials: true, // Allow sending sessions/cookies
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH']
 }));
 
@@ -53,8 +58,8 @@ app.use(session({
   cookie: {
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
     httpOnly: true, // Prevents XSS attacks by not allowing JS to read the cookie
-    secure: process.env.NODE_ENV === 'production', // Set to true if using HTTPS
-    sameSite: 'lax' // Helps mitigate CSRF
+    secure: true, // Required for SameSite=None across Vercel subdomains
+    sameSite: 'none' // Allows cookies between different Vercel subdomains
   }
 }));
 
