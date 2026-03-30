@@ -16,6 +16,12 @@ const HeroSlider: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Preload all images for a seamless slider experience
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 6000);
