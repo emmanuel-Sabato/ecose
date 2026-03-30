@@ -4,11 +4,11 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const images = [
-  '/src/assets/hero/ecose-footbal-club.jpeg',
-  '/src/assets/hero/ecose-traditionel.jpeg',
-  '/src/assets/hero/karate-students-ecose.jpeg',
-  '/src/assets/hero/pray-ecose.jpeg',
-  '/src/assets/hero/students-ecoseee.jpeg',
+  '/assets/hero/ecose-footbal-club.jpeg',
+  '/assets/hero/ecose-traditionel.jpeg',
+  '/assets/hero/karate-students-ecose.jpeg',
+  '/assets/hero/pray-ecose.jpeg',
+  '/assets/hero/students-ecoseee.jpeg',
 ];
 
 const HeroSlider: React.FC = () => {

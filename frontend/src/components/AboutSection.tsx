@@ -44,7 +44,7 @@ const AboutSection: React.FC = () => {
             className="lg:w-1/2 relative"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
-              <img src="/src/assets/hero/students-ecoseee.jpeg" alt="Students learning" className="w-full h-auto transform hover:scale-105 transition-transform duration-700" />
+              <img src="/assets/hero/students-ecoseee.jpeg" alt="Students learning" className="w-full h-auto transform hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="absolute -bottom-10 -right-10 z-20 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hidden md:block max-w-xs animate-bounce-slow">
               <h4 className="text-school-green font-bold text-lg mb-2">The Difference</h4>

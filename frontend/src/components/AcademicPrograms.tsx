@@ -14,7 +14,7 @@ const AcademicPrograms: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto text-black">
           <ProgramCard 
-            image="/src/assets/hero/karate-students-ecose.jpeg"
+            image="/assets/hero/karate-students-ecose.jpeg"
             level="Level: 1 - 3"
             title="O'Level (Ordinary Level)"
             description="Our O'Level program provides a solid foundational education across diverse subjects, fostering curiosity and critical thinking skills in young learners."
@@ -22,7 +22,7 @@ const AcademicPrograms: React.FC = () => {
             badge="Foundation"
           />
           <ProgramCard 
-            image="/src/assets/hero/first-genius-students-ecose.jpeg"
+            image="/assets/hero/first-genius-students-ecose.jpeg"
             level="Level: 4 - 6"
             title="A'Level (Advanced Level)"
             description="Specialized pathways designed for deeper academic rigor, preparing students for university entrance and professional life through focused study."

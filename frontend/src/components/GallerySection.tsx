@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const galleryImages = [
-  '/src/assets/gallery/fashion-ecose2.jpg',
-  '/src/assets/gallery/itorero-ecose.jpeg',
-  '/src/assets/gallery/karate-students-ecose3.jpeg',
-  '/src/assets/gallery/yoga-students-ecose.jpeg',
-  '/src/assets/gallery/traditionel-ecose.jpeg',
-  '/src/assets/gallery/students-ecosee.jpeg',
+  '/assets/gallery/fashion-ecose2.jpg',
+  '/assets/gallery/itorero-ecose.jpeg',
+  '/assets/gallery/karate-students-ecose3.jpeg',
+  '/assets/gallery/yoga-students-ecose.jpeg',
+  '/assets/gallery/traditionel-ecose.jpeg',
+  '/assets/gallery/students-ecosee.jpeg',
 ];
 
 const GallerySection: React.FC = () => {

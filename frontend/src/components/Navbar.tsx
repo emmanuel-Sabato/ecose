@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="/src/assets/ecose-logo.png" 
+              src="/assets/ecose-logo.png" 
               alt="Ecose Logo" 
               className="h-10 sm:h-12 w-auto group-hover:scale-105 transition-transform duration-300" 
             />

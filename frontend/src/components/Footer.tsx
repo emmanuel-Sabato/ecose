@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
           
           {/* School Identity */}
           <div className="lg:col-span-4">
-            <img src="/src/assets/ecose-logo.png" alt="Ecose Logo" className="h-20 w-auto mb-8" />
+            <img src="/assets/ecose-logo.png" alt="Ecose Logo" className="h-20 w-auto mb-8" />
             <h3 className="text-2xl font-bold mb-6 tracking-tight">
               {settings?.schoolName ? (
                 <>
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
           >
             <span className="text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold">Powered by</span>
             <div className="flex items-center gap-2">
-              <img src="/src/assets/magicpentagonicon.png" alt="Magic Pentagon" className="h-6 w-auto grayscale group-hover:grayscale-0 transition-all duration-500" />
+              <img src="/assets/magicpentagonicon.png" alt="Magic Pentagon" className="h-6 w-auto grayscale group-hover:grayscale-0 transition-all duration-500" />
               <span className="text-white text-xs font-black tracking-tighter group-hover:text-school-gold transition-colors">{settings?.securityBranding || 'MAGICPENTAGON'}</span>
             </div>
           </motion.div>
