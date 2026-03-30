@@ -12,7 +12,7 @@ const AcademicPrograms: React.FC = () => {
           <div className="h-1 w-20 bg-school-gold mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 max-w-7xl mx-auto text-black">
           <ProgramCard 
             image="/assets/hero/karate-students-ecose.jpeg"
             level="Level: 1 - 3"
@@ -28,6 +28,14 @@ const AcademicPrograms: React.FC = () => {
             description="Specialized pathways designed for deeper academic rigor, preparing students for university entrance and professional life through focused study."
             color="border-school-green"
             badge="Excellence"
+          />
+          <ProgramCard 
+            image="/assets/hero/ecose-traditionel.jpeg"
+            level="Level: 4 - 6"
+            title="TVET & Technical"
+            description="Hands-on vocational training designed to equip students with practical skills in technology and engineering for the modern job market."
+            color="border-school-gold"
+            badge="Innovation"
           />
         </div>
       </div>

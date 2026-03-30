@@ -42,6 +42,22 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px default */
+  padding-right: 1.5rem;
+  max-width: 1600px;
+}
+
+@media (min-width: 1536px) {
+  .container {
+    padding-left: 8rem; /* 128px for Extra-Desktop minimalist look */
+    padding-right: 8rem;
+  }
+}
+
 body {
   font-family: var(--font-heading);
   -webkit-font-smoothing: antialiased;

@@ -24,7 +24,7 @@ const AboutSection: React.FC = () => {
               At Ecose, we believe in holistic education — one that balances academic excellence with character development, creativity, and compassion. We prepare our students not just for exams, but for life.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="p-6 bg-gray-50 rounded-xl border-l-4 border-school-gold shadow-sm">
                 <h4 className="font-bold text-black mb-2 uppercase tracking-wide">Our Vision</h4>
                 <p className="text-gray-500 text-sm">To impart high-quality education for a vibrant and ethical society.</p>

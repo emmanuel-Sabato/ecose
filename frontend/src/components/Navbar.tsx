@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 text-white font-bold text-[11px] tracking-widest">
+          <div className="hidden lg:flex items-center gap-6 lg:gap-8 text-white font-bold text-[11px] tracking-widest">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
             
             {/* Mobile Toggle */}
             <button 
-              className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" 
+              className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[45] bg-black/95 backdrop-blur-2xl md:hidden flex flex-col pt-24 pb-10 px-6"
+            className="fixed inset-0 z-[45] bg-black/95 backdrop-blur-2xl lg:hidden flex flex-col pt-24 pb-10 px-6"
           >
             <div className="flex flex-col gap-6 items-center justify-center flex-grow">
               {navLinks.map((link, index) => (
