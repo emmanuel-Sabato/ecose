@@ -44,7 +44,7 @@ const NewsManager: React.FC = () => {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/news');
+      const response = await axios.get('https://ecose-backend.vercel.app/api/news');
       setNews(response.data.data.news);
     } catch (err) {
       console.error('Fetch news failed:', err);
@@ -105,11 +105,11 @@ const NewsManager: React.FC = () => {
 
     try {
       if (formData.id) {
-        await axios.patch(`http://localhost:5001/api/news/${formData.id}`, data, {
+        await axios.patch(`https://ecose-backend.vercel.app/api/news/${formData.id}`, data, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
       } else {
-        await axios.post('http://localhost:5001/api/news', data, {
+        await axios.post('https://ecose-backend.vercel.app/api/news', data, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
       }
@@ -125,7 +125,7 @@ const NewsManager: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5001/api/news/${id}`);
+      await axios.delete(`https://ecose-backend.vercel.app/api/news/${id}`);
       fetchNews();
     } catch (err) {
       console.error('Delete failed:', err);

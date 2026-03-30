@@ -15,7 +15,7 @@ const NewsDetail: React.FC = () => {
   useEffect(() => {
     const fetchStory = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/api/news/${id}`);
+        const response = await axios.get(`https://ecose-backend.vercel.app/api/news/${id}`);
         setStory(response.data.data.news);
       } catch (err) {
         console.error('Fetch story failed:', err);

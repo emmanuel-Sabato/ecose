@@ -41,7 +41,7 @@ const ApplicationsManager: React.FC = () => {
 
   const fetchApplications = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/applications', { withCredentials: true });
+      const res = await axios.get('https://ecose-backend.vercel.app/api/applications', { withCredentials: true });
       setApplications(res.data.data.applications || []);
     } catch (err) {
       console.error('Failed to fetch applications:', err);
@@ -53,7 +53,7 @@ const ApplicationsManager: React.FC = () => {
   const updateStatus = async (id: string, status: string) => {
     setUpdating(id);
     try {
-      await axios.patch(`http://localhost:5001/api/applications/${id}`, { status }, { withCredentials: true });
+      await axios.patch(`https://ecose-backend.vercel.app/api/applications/${id}`, { status }, { withCredentials: true });
       fetchApplications();
       if (selectedApp && selectedApp._id === id) {
         setSelectedApp({ ...selectedApp, status });
@@ -68,7 +68,7 @@ const ApplicationsManager: React.FC = () => {
   const deleteApplication = async (id: string) => {
     if (!window.confirm('Are you sure you want to delete this application?')) return;
     try {
-      await axios.delete(`http://localhost:5001/api/applications/${id}`, { withCredentials: true });
+      await axios.delete(`https://ecose-backend.vercel.app/api/applications/${id}`, { withCredentials: true });
       fetchApplications();
       setSelectedApp(null);
     } catch (err) {

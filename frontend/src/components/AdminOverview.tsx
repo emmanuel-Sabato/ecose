@@ -80,7 +80,7 @@ const AdminOverview: React.FC = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/admin/stats', { withCredentials: true });
+        const res = await axios.get('https://ecose-backend.vercel.app/api/admin/stats', { withCredentials: true });
         setStats(res.data.data.stats);
         setActivities(res.data.data.activities);
       } catch (err) {

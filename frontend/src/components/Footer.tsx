@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 
   const fetchSettings = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/settings');
+      const res = await axios.get('https://ecose-backend.vercel.app/api/settings');
       setSettings(res.data);
     } catch (err) {
       console.error('Error fetching settings:', err);

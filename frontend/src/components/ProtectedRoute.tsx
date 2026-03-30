@@ -17,7 +17,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/auth/me');
+        const response = await axios.get('https://ecose-backend.vercel.app/api/auth/me');
         if (response.data.status === 'success') {
           setAuthenticated(true);
         }

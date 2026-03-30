@@ -35,7 +35,7 @@ const FacilitiesPage: React.FC = () => {
   useEffect(() => {
     const fetchFacilities = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/facilities');
+        const res = await axios.get('https://ecose-backend.vercel.app/api/facilities');
         setFacilities(res.data.data.facilities || []);
       } catch (err) {
         console.error('Failed to fetch facilities:', err);

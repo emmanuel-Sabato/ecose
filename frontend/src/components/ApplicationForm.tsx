@@ -66,7 +66,7 @@ const ApplicationForm: React.FC = () => {
     setError('');
 
     try {
-      await axios.post('http://localhost:5001/api/applications/submit', formData);
+      await axios.post('https://ecose-backend.vercel.app/api/applications/submit', formData);
       setSubmitted(true);
       window.scrollTo(0, 0);
     } catch (err: any) {

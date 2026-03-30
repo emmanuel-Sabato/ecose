@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -55,7 +55,7 @@ const SchoolCalendar: React.FC = () => {
     try {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
-      const response = await axios.get(`http://localhost:5001/api/events/month?year=${year}&month=${month}`);
+      const response = await axios.get(`https://ecose-backend.vercel.app/api/events/month?year=${year}&month=${month}`);
       setEvents(response.data.data.events);
     } catch (err) {
       console.error('Fetch events failed:', err);
@@ -128,7 +128,7 @@ const SchoolCalendar: React.FC = () => {
         </div>
 
         <div className="space-y-1 overflow-hidden">
-          {data?.activities?.slice(0, 2).map((activity, idx) => {
+          {data?.activities?.slice(0, 2).map((activity: any, idx: number) => {
              const style = activityStyles[activity.type as ActivityType];
              return (
                <div 
@@ -242,7 +242,7 @@ const SchoolCalendar: React.FC = () => {
                     
                     <div className="space-y-6">
                       {selectedData?.activities && selectedData.activities.length > 0 ? (
-                        selectedData.activities.map((activity, idx) => (
+                        selectedData.activities.map((activity: any, idx: number) => (
                           <div key={idx} className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 shadow-sm relative group overflow-hidden">
                             <div className={`absolute top-0 right-0 w-2 h-full ${activityStyles[activity.type as ActivityType].bg.replace('bg-', 'bg-opacity-50 ' + activityStyles[activity.type as ActivityType].color.replace('text-', 'bg-'))}`} />
                             <div className="flex items-center gap-2 mb-4">

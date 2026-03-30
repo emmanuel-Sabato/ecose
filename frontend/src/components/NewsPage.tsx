@@ -14,7 +14,7 @@ const NewsPage: React.FC = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/news');
+        const response = await axios.get('https://ecose-backend.vercel.app/api/news');
         setNews(response.data.data.news);
       } catch (err) {
         console.error('Fetch news failed:', err);

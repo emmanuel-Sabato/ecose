@@ -57,7 +57,7 @@ const CalendarManager: React.FC = () => {
     try {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth() + 1;
-      const response = await axios.get(`http://localhost:5001/api/events/month?year=${year}&month=${month}`);
+      const response = await axios.get(`https://ecose-backend.vercel.app/api/events/month?year=${year}&month=${month}`);
       setEvents(response.data.data.events);
     } catch (err) {
       console.error('Fetch events failed:', err);
@@ -122,9 +122,9 @@ const CalendarManager: React.FC = () => {
 
     try {
       if (formData.id) {
-        await axios.patch(`http://localhost:5001/api/events/${formData.id}`, formData);
+        await axios.patch(`https://ecose-backend.vercel.app/api/events/${formData.id}`, formData);
       } else {
-        await axios.post('http://localhost:5001/api/events', formData);
+        await axios.post('https://ecose-backend.vercel.app/api/events', formData);
       }
       setModalOpen(false);
       resetForm();
@@ -139,7 +139,7 @@ const CalendarManager: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (!window.confirm('Delete this event?')) return;
     try {
-      await axios.delete(`http://localhost:5001/api/events/${id}`);
+      await axios.delete(`https://ecose-backend.vercel.app/api/events/${id}`);
       fetchEvents();
       setModalOpen(false);
     } catch (err) {

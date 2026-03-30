@@ -51,7 +51,7 @@ const AdminSettings: React.FC = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/settings');
+      const response = await axios.get('https://ecose-backend.vercel.app/api/settings');
       setSettings(response.data.data.settings);
     } catch (err) {
       console.error('Fetch settings failed:', err);
@@ -68,7 +68,7 @@ const AdminSettings: React.FC = () => {
     setError('');
 
     try {
-      await axios.patch('http://localhost:5001/api/settings', settings, { withCredentials: true });
+      await axios.patch('https://ecose-backend.vercel.app/api/settings', settings, { withCredentials: true });
       setSuccess(true);
       setTimeout(() => setSuccess(false), 3000);
     } catch (err: any) {
@@ -90,7 +90,7 @@ const AdminSettings: React.FC = () => {
 
     try {
       // Assuming endpoint exists or handling via authController.updatePassword
-      await axios.patch('http://localhost:5001/api/auth/updatePassword', {
+      await axios.patch('https://ecose-backend.vercel.app/api/auth/updatePassword', {
         currentPassword: passwords.currentPassword,
         password: passwords.newPassword,
         passwordConfirm: passwords.confirmPassword

@@ -42,7 +42,7 @@ const FacilitiesManager: React.FC = () => {
 
   const fetchFacilities = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/facilities');
+      const res = await axios.get('https://ecose-backend.vercel.app/api/facilities');
       setFacilities(res.data.data.facilities || []);
     } catch (err) { console.error(err); } 
     finally { setLoading(false); }
@@ -69,7 +69,7 @@ const FacilitiesManager: React.FC = () => {
     if (selectedImage) data.append('image', selectedImage);
 
     try {
-      const url = `http://localhost:5001/api/facilities${formData.id ? `/${formData.id}` : ''}`;
+      const url = `https://ecose-backend.vercel.app/api/facilities${formData.id ? `/${formData.id}` : ''}`;
       const method = formData.id ? 'patch' : 'post';
       await axios[method](url, data, { headers: { 'Content-Type': 'multipart/form-data' } });
       setModalOpen(false);
@@ -81,7 +81,7 @@ const FacilitiesManager: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5001/api/facilities/${id}`);
+      await axios.delete(`https://ecose-backend.vercel.app/api/facilities/${id}`);
       fetchFacilities();
     } catch (err) { console.error(err); }
     finally { setDeleting(null); }

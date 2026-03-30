@@ -56,7 +56,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:5001/api/auth/logout');
+      await axios.post('https://ecose-backend.vercel.app/api/auth/logout');
       navigate('/login');
     } catch (err) {
       console.error('Logout failed:', err);
